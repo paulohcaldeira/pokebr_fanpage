@@ -1,4 +1,4 @@
-"# Fanpage Pokémon - Projeto EBAC
+# Fanpage Pokémon - Projeto EBAC
 
 Este projeto faz parte do curso de Profissão: Desenvolvedor Full Stack Python v2 da [EBAC](https://ebaconline.com.br/). O objetivo deste exercício foi criar um site simples usando HTML e CSS, aplicando os conceitos aprendidos durante o módulo. O tema escolhido para o site foi uma **Fanpage de Pokémon**.
 
@@ -25,24 +25,20 @@ Este site foi criado para demonstrar as habilidades básicas em HTML e CSS, com 
 
 O site está hospedado na Vercel, permitindo que ele seja acessado facilmente através do link abaixo:
 
-[**Acessar Fanpage Pokémon**](https://seu-link-vercel.vercel.app/)
+[**Acessar PokéBr - Fanpage Pokémon**](https://pokebr-fanpage.vercel.app/)
 
 ## Como Usar
 
 1. Clone este repositório:
-   \`\`\`bash
+   ```
    git clone https://github.com/seu-usuario/seu-repositorio.git
-   \`\`\`
+   ```
 2. Acesse o diretório do projeto:
-   \`\`\`bash
+   ```
    cd nome-do-projeto
-   \`\`\`
+   ```
 3. Abra o arquivo \`index.html\` em seu navegador favorito.
 
-## Imagens do Projeto
-
-![Página Inicial](link-para-imagem.png)
-*Exemplo da página inicial da fanpage.*
 
 ## Avaliação do Tutor
 
