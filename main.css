@@ -5,34 +5,87 @@
     box-sizing: border-box;
 }
 
-header,
-section h1,
-form button {
+header, section h1, form button {
     font-family: "Bungee", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-weight: normal
+    font-weight: normal;
 }
 
-
-body, section h2, section h3,
-.contact-methods h3 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;}
-
-
 header {
-    background-color: #ffcc00;
-    padding: 20px;
+    background-color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.6); /* Fundo semitransparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1000;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f4f4f9, #e1ecf4); /* Gradiente sutil */
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #222;
+}
+
+section {
+    padding: 50px 20px;
+    margin-bottom: 30px;
+}
+
+body, section h2, section h3, .contact-methods h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .logo img {
+    margin-top: 8px;
     height: 50px;
-    
+}
+
+button {
+    background-color: #e67e22; /* Laranja suave */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:active {
+    transform: scale(0.95); /* Leve redução no tamanho ao clicar */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #d35400; /* Tom mais escuro ao passar o mouse */
 }
 
 nav ul {
@@ -45,33 +98,35 @@ nav ul li {
 }
 
 nav ul li a {
+    color: #2c3e50;
+    font-size: 1.1em;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 8px 16px;
-    transition: background-color 0.3s;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    background-color: #fff;
-    border-radius: 5px;
+nav ul li a:hover, nav ul li a.active {
+    background-color: #e67e22;
+    color: #fff;
 }
 
 .hero {
     background-image: url('images/banner.jpg'); /* Insira o caminho da imagem aqui */
-    background-size: cover; /* Faz com que a imagem cubra toda a seção */
-    background-position: center; /* Centraliza a imagem no meio da seção */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    height: 400px; /* Altura da seção */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff; /* Cor do texto para contrastar com o fundo */
-    position: relative; /* Garante que o conteúdo da seção seja posicionado corretamente */
-    z-index: 1; /* O texto será renderizado acima do fundo */
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    padding: 80px 0;
+    text-align: center;
 }
 
 .hero::before {
@@ -82,26 +137,24 @@ nav ul li a.active {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Um leve filtro preto sobre a imagem */
-    z-index: 0; /* Coloca o filtro e a imagem atrás do texto */
+    z-index: 0;
 }
 
-.hero h1,
-.hero p,
-.hero .btn {
+.hero h1, .hero p, .hero .btn {
     position: relative;
-    z-index: 1; /* Mantém o texto e o botão acima da imagem de fundo */
+    z-index: 1;
 }
 
 .hero h1 {
-    color: #000;
+    margin-top: 90px;
+    color: #fff;
     font-size: 3em;
-    margin-bottom: 10px;
 }
 
 .hero p {
-    color: #000;
-    font-size: 35px;
     margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.2em;
 }
 
 .btn {
@@ -149,22 +202,19 @@ footer p {
 }
 
 /* Estilos para a seção Pokédex */
-.pokedex,
-.games_header {
+.pokedex, .games_header {
     padding: 50px;
     text-align: center;
     background-color: #f7f7f7;
 }
 
-.pokedex h2,
-.games_header h2 {
+.pokedex h2, .games_header h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #333;
 }
 
-.pokemon-list,
-.games-list {
+.pokemon-list, .games-list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -173,48 +223,39 @@ footer p {
 
 .pokemon {
     background-color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    width: 150px;
+    border-radius: 12px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    width: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
-.pokemon:hover{
-    transform: scale(1.1);
+.pokemon:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .pokemon img {
     width: 100px;
-    height: auto;
 }
 
-.pokemon h3,
-.games h3 {
-    font-size: 1.2em;
-    margin: 10px 0;
+.pokemon h3 {
+    font-size: 1.1em;
+    margin: 15px 0 10px 0;
+    color: #2c3e50;
 }
 
-.pokemon p,
-.games p {
+.pokemon p {
     font-size: 0.9em;
     color: #666;
 }
 
-
-
-
-
-
-
-
-
-
-.games img {
-    width: 150px;
+img {
+    max-width: 100%;
     height: auto;
+    margin-bottom: 10px;
 }
 
 .games:hover {
@@ -232,22 +273,13 @@ footer p {
     transition: transform 0.3s ease;
 }
 
-
-
-
-
-
-
-
-
 .container {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
 }
 
-header .container,
-section .container {
+header .container, section .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -267,9 +299,7 @@ section .container {
     margin-top: 40px;
 }
 
-form input,
-form textarea,
-form button{
+form input, form textarea, form button {
     display: block;
     width: 320px;
     margin-bottom: 8px;
@@ -283,35 +313,121 @@ form textarea {
 
 .social li {
     margin-right: 8px;
-    }
-    
-    .social li a {
-        text-decoration: none;
-    }
-    
-    section h3 {
-        margin-bottom: 16px;
-    }
-    
-    form button {
-        background-color: #333;
-        color: #ffcc00;
-        border: none;
-        cursor: pointer;
-    }
-    
-    form button:hover {
-        background-color: rgb(119, 119, 133);
-    }
-    
-    input:focus, textarea:focus {
-        outline-color: rgb(84, 85, 92);
+}
+
+.social li a {
+    text-decoration: none;
+}
+
+section h3 {
+    margin-bottom: 16px;
+}
+
+form button {
+    background-color: #333;
+    color: #ffcc00;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: rgb(119, 119, 133);
+}
+
+input:focus, textarea:focus {
+    outline-color: rgb(84, 85, 92);
+}
+
+.social img {
+    height: 24px;
+}
+
+.social li {
+    display: inline;
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 9% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.close {
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+    margin-top: -20px;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+
+.pesquisaBar {
+    margin-bottom: 32px;
+    padding: 10px;
+    width: 600px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.pesquisaBar:focus {
+    border-color: #ffcc00;
+}
+
+/* Adaptações para diferentes telas */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
     }
 
-    .social img {
-        height: 24px;
+    .container {
+        flex-direction: column;
     }
 
-    .social li {
-        display: inline;
+    .contact-methods {
+        flex-direction: column;
     }
+
+    form input, form textarea, form button {
+        width: 100%;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    header .logo img {
+        height: 40px;
+    }
+
+    .about, .hero {
+        padding: 30px 15px;
+    }
+
+    .pokemon, .games {
+        width: 100%;
+    }
+}
